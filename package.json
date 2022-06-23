@@ -1,0 +1,24 @@
+{
+  "name": "watchlab",
+  "version": "1.0.0",
+  "description": "Website developed with HTML, Scss, and JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jennifer-magpantay/watchlab.git"
+  },
+  "author": "Jennifer Magpantay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jennifer-magpantay/watchlab/issues"
+  },
+  "homepage": "https://github.com/jennifer-magpantay/watchlab#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.2",
+    "parcel": "^2.6.2"
+  }
+}
