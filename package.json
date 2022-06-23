@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Website developed with HTML, Scss, and JavaScript",
   "main": "index.js",
+  "source": "src/index.html",
   "scripts": {
-    "dev": "parcel src/index.html",
+    "start": "parcel src/index.html --no-cache",
     "build": "parcel build src/index.html"
   },
   "repository": {
@@ -18,7 +19,7 @@
   },
   "homepage": "https://github.com/jennifer-magpantay/watchlab#readme",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.6.2",
-    "parcel": "^2.6.2"
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.53.0"
   }
 }
