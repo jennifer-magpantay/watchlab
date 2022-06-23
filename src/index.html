@@ -15,13 +15,88 @@
 </head>
 
 <body>
-  <header></header>
+  <header class="header">
+    <!-- logo -->
+    <span class="header--logo">WATCH/LAB</span>
+    <!-- header navigation -->
+    <nav class="header--navigation">
+      <ul>
+        <li>About us</li>
+        <li>Brand</li>
+        <li>Projects</li>
+        <li>Magazine</li>
+        <li>Press</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+    <!-- search -->
+    <div class="search--box">
+      <form role='search'>
+        <label for='search'>
+          <span class='visually-hidden'>Search</span>
+        </label>
+        <input type='text' id='search' class="search--input" placeholder="Search" />
+        <button type='submit' class="search--button">
+          <span class='visually-hidden'>Submit Search</span>
+          <img class='search--button-icon' src="assets/bx_search.svg" alt="Search button" />
+        </button>
+      </form>
+    </div>
+  </header>
 
   <main>
-    <h1>Hello stranger</h1>
+
   </main>
 
-  <footer></footer>
+  <footer div class="footer">
+    <div class="footer--information">
+      <span class="footer--information-logo">WATCH/LAB</span>
+
+      <div class="container--flex">
+        <div class="footer--information-location">
+          <p>Watch/Lab Innovation brings success</p>
+          <p> Via Borgogna 5, Milan</p>
+          <p>Italy</p>
+        </div>
+
+        <div class="footer--information-sitemap">
+          <nav class="footer--navigation">
+            <ul>
+              <li>About us</li>
+              <li>Brand</li>
+              <li>Projects</li>
+              <li>Magazine</li>
+              <li>Press</li>
+              <li>Contacts</li>
+              <li>Privacy Policy</li>
+              <li>Serch</li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer--information-contact">
+          <p>T. +39 392 9133937</p>
+          <p>M. info@watch-lab.it</p>
+          <p class="social-media">
+            <img class='icon' src="assets/icon_facebook.svg" alt='Facebook icon' />
+            FACEBOOK
+          </p>
+          <p class="social-media">
+            <img class=' icon' src="assets/icon_instagram.svg" alt="Instagram icon" />
+            INSTAGRAM
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer--copyrights">
+      <p>Copyright Watch/Lab all rights reserved</p>
+      <p>website by nssfactory</p>
+    </div>
+  </footer>
+
+    <!-- js scripts -->  
+    <script type='module' src="./js/index.js"></script>
 </body>
 
 </html>
