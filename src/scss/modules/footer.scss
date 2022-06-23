@@ -1,0 +1,73 @@
+@use "../tools/variables" as *;
+@use "../tools/mixins" as *;
+@use "../global" as *;
+
+.footer {
+    width: 100%;
+    background-color: $color-surface-dk;
+
+    &--information {
+        padding: 15rem 8.33% 20rem;
+        color: $color-text-gray-lg;
+
+        p,
+        li {
+            padding-bottom: 1rem;
+        }
+
+        &-logo {
+            @include logo(0, transparent, $color-text-lg, 2rem);
+        }
+
+        &-sitemap {
+            columns: 2;
+        }
+
+        &-contact {
+            .social-media {
+                display: flex;
+                align-items: center;
+                font-family: "Montserrat-Regular";
+                font-size: $text-tag;
+
+                .icon {
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    margin-right: 01rem;
+                }
+            }
+        }
+
+        .container--flex {
+            height: 12rem;
+            margin-top: 02rem;
+
+            & div {
+                flex: 1;
+
+                &:not(:last-child) {
+                    margin-right: 05rem;
+                }
+            }
+        }
+    }
+
+    &--sitemap {
+        background-color: $color-text;
+    }
+
+    &--copyrights {
+        width: 100%;
+        height: 6rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.6rem 8.33%;
+        background-color: $color-gray-dk;
+
+        p {
+            color: $color-text-gray-lg;
+            font-size: $text-tag;
+        }
+    }
+}

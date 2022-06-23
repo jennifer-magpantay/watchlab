@@ -1,0 +1,47 @@
+@use "../tools/variables" as *;
+
+.search--box {
+    form {
+        display: flex;
+        align-items: center;
+    }
+
+    .search--input {
+        padding: 0.5rem 01rem;
+        border: none;
+        border-bottom: 02px solid $color-title;
+        color: $color-subtitle;
+        font-family: "Montserrat-Regular";
+        font-size: $text-body;
+        font-weight: 400;
+        outline: none;
+
+        &:focus {
+            outline: auto;
+            border-bottom: none;
+        }
+    }
+
+    .search--button {
+        background-color: transparent;
+        border: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &-icon {
+            width: 2.5rem;
+            height: auto;
+            padding: 0.5rem;
+            outline: 0;
+        }
+    }
+
+    ::placeholder {
+        color: $color-subtitle;
+        font-family: "Montserrat-Regular";
+        font-size: $text-body;
+        font-weight: 400;
+    }
+}

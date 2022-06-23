@@ -1,0 +1,36 @@
+@use "../tools/variables" as *;
+@use "../global/global" as *;
+@use "../tools/mixins" as *;
+
+.header {
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 8.33%;
+    background-color: $color-background;
+
+    &--logo {
+        @include logo(1.5rem 3rem, $color-primary, $color-text-lg, 2rem);
+    }
+
+    &--navigation {
+        ul {
+            display: flex;
+            align-items: center;
+
+            li {
+                height: 100%;
+                padding: 1.8rem 3rem;
+                font-family: "Montserrat-Regular";
+
+                &:hover {
+                    background-color: $color-primary;
+                    color: $color-text-lg;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

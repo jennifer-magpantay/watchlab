@@ -1,0 +1,77 @@
+@use "../tools/variables" as *;
+
+@font-face {
+  font-family: "Merriweather-Regular";
+  src: local("Merriweather-Regular");
+  src: url("../fonts/Merriweather-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Miller-Display";
+  src: local("Miller-Display");
+  src: url("../fonts/Miller-Display_30501.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: local("Montserrat-Bold");
+  src: url("../fonts/Montserrat-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: local("Montserrat-Regular");
+  src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
+}
+
+html {
+  font-size: 62.5%;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-family: "Miller-Display";
+  font-size: $text-display;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+h2 {
+  font-family: "Miller-Display";
+  font-size: $text-headline;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h3 {
+  font-family: "Merriweather-Regular";
+  font-size: $text-title;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+p,
+li {
+  font-size: $text-body;
+  line-height: 1.5;
+  max-width: 70ch;
+}
+
+li {
+  list-style-type: none;
+}
+
+.visually-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
