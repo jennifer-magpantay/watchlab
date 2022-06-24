@@ -1,0 +1,43 @@
+@use "../tools/mixins" as *;
+@use "../tools/variables" as *;
+
+.collections {
+    @include display-flex(flex-start, center);
+    width: 100%;
+    height: calc(100vh - 8rem);
+    padding-inline: 04rem;
+
+    .collection--content {
+        flex: 1;
+
+        &.collection-text {
+            @include display-flex(center, space-between);
+            height: 100%;
+            flex-direction: column;
+
+            padding: 05rem 0;
+            text-align: center;
+
+            .section--tag {
+                @include tags($color-title, Bold);
+            }
+
+            h3{
+                width: 15ch;
+            }
+
+            p {
+                width: 40ch;
+            }
+        }
+
+        &.collection-img {
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

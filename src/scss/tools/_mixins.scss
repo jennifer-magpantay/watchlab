@@ -1,0 +1,36 @@
+@use "../tools/variables" as *;
+
+@mixin display-flex($align-items, $justify-content) {
+  display: flex;
+  align-items: #{$align-items};
+  justify-content: #{$justify-content};
+}
+
+@mixin logo($padding, $bg-color, $color) {
+  height: 6rem;
+  padding: #{$padding};
+  background-color: #{$bg-color};
+  color: #{$color};
+  font-family: "Montserrat-Bold";
+  font-size: 3.5rem;
+  text-transform: uppercase;
+}
+
+@mixin overlay($bg-color) {
+  position: absolute;
+  inset: 0;
+  background-color: #{$bg-color};
+}
+
+@mixin tags($color, $font-type) {
+  color: #{$color};
+  font-family: "Montserrat-" + #{$font-type};
+  font-size: $text-tag;
+  line-height: 1.5;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+}
+
+@mixin transitions($prop) {
+  transition: #{$prop} 0.5s ease-in-out;
+}

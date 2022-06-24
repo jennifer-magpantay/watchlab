@@ -6,8 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- meta tags for robots -->
-
   <!-- styles -->
   <link rel="stylesheet" href="./scss/style.scss">
 
@@ -18,8 +16,9 @@
   <header class="header">
     <!-- logo -->
     <span class="header--logo">WATCH/LAB</span>
+
     <!-- header navigation -->
-    <nav class="header--navigation">
+    <nav class="header--navigation" id='header--navigation-js' aria-label="Main Navigation" role="navigation">
       <ul>
         <li>About us</li>
         <li>Brand</li>
@@ -29,7 +28,8 @@
         <li>Contact</li>
       </ul>
     </nav>
-    <!-- search -->
+
+    <!-- search box -->
     <div class="search--box">
       <form role='search'>
         <label for='search'>
@@ -38,14 +38,178 @@
         <input type='text' id='search' class="search--input" placeholder="Search" />
         <button type='submit' class="search--button">
           <span class='visually-hidden'>Submit Search</span>
-          <img class='search--button-icon' src="assets/bx_search.svg" alt="Search button" />
+          <img class='search--button-icon' src="assets/icon_search.svg" alt="Search button" />
         </button>
       </form>
     </div>
+
+    <!-- mobile navigation icon -->
   </header>
 
   <main>
+    <!-- Intro -->
+    <div class="intro">
+      <div class="overlay"></div>
 
+       <div class="intro--container-content">
+       <p class="intro-tag">LONDON COLLECTION SEASON</p>
+       <h1>New Selection Of Herny London</h1>
+       <p class="intro-text">An estimable experience in the modern collection house</p>
+         <a class="link" href="http://">Discover</a>
+      </div>
+    </div>
+
+    <!-- History -->
+    <section class="history">
+      <h2>History and Patriarcal season</h2>
+
+      <div class="history--container-content">
+        <div class="history--content first">
+          <p class="body--text">
+            On the other hand, we denounce with righteous
+            indignation and dislike men who are so beguiled and
+            demoralized by the charms of pleasure of the moment,
+            so blinded by desire
+          </p>
+        </div>
+        <div class="history--content second">
+          <p class="body--text">
+            But I must explain to you how all this mistaken idea of denouncing
+            pleasure and praising pain was born and I will give you a complete
+            account of the system, and expound the actual teachings of the great
+            explorer of the truth, the master-builder of human happiness. No that
+            are extremely painful
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temporary Collection -->
+    <section class="collections">
+      <div class="collection--content collection-text">
+        <p class="section--tag">LONDON COLLECTION SEASON</p>
+        <h3>Temporary Store</h3>
+        <p class="body--text">On the other hand, we denounce with righteous
+          indignation and dislike men who are so beguiled and
+          demoralized by the charms of pleasure of the moment,
+          so blinded by desire</p>
+
+        <a class="link" href="http://">View</a>
+      </div>
+
+      <div class="collection--content collection-img">
+        <img src="assets/new-collection_01.jpg" alt="House with minimalist design in a field with trees beside of it, convered and surrounded by light snow.">
+      </div>
+    </section>
+
+
+    <!-- New Collection -->
+    <section class="collections">
+      <div class="collection--content collection-img">
+        <img src="assets/new-collection_02.jpg" alt="House with minimalist design in a field surrounded by trees.">
+      </div>
+
+      <div class="collection--content collection-text">
+        <p class="section--tag">LONDON COLLECTION SEASON</p>
+        <h3>New Collection Henry London</h3>
+        <p class="body--text">On the other hand, we denounce with righteous
+          indignation and dislike men who are so beguiled and
+          demoralized by the charms of pleasure of the moment,
+          so blinded by desire</p>
+
+        <a class="link" href="http://">View</a>
+      </div>
+    </section>
+
+    <!-- Press -->
+    <section class="press">
+      <div class="content--container">
+        <h2>Press from Watch Lab Studio</h2>
+        <p class="body--text">On the other hand, we denounce with
+          righteous indignation and dislike men
+          who are so beguiled and demoralized
+          by the charms of pleasure of the
+          moment, so blinded by desire, that
+          they cannot foresee the pain trouble</p>
+      </div>
+
+      <div class="content--container slider">
+        <!-- slider -->
+        <div class="slider--container">
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Discover - Instagram -->
+    <section class="discover">
+      <div class="container--flex">
+        <div class="img--container highlight">
+          <div class="overlay"></div>
+          <img src="assets/watchlab_01.jpg" alt="A men well dressed wearing a watch from Watch/Lab Collection" />
+
+          <div class="img--container-text">
+            <p>Instagram</p>
+            <h2>Discover Watch Lab</h2>
+            <a class="social--link" href="http://">Visit us on Instagram</a>
+          </div>
+
+        </div>
+        <div class="img--container collection">
+          <div class="square">
+            <div class="overlay-hidden"></div>
+            <img src="assets/watchlab_02.jpg" alt="A men well dressed wearing a watch from Watch/Lab Collection" />
+            <div class="link--container">
+              <a class="social--link" href="http://">Visit us on Instagram</a>
+            </div>
+          </div>
+          <div class="square">
+            <div class="overlay-hidden"></div>
+            <img src="assets/watchlab_03.jpg" alt="A men well dressed wearing a watch from Watch/Lab Collection" />
+            <div class="link--container">
+              <a class="social--link" href="http://">Visit us on Instagram</a>
+            </div>
+          </div>
+          <div class="square">
+            <div class="overlay-hidden"></div>
+            <img src="assets/watchlab_04.jpg" alt="A men well dressed wearing a watch from Watch/Lab Collection" />
+            <div class="link--container">
+              <a class="social--link" href="http://">Visit us on Instagram</a>
+            </div>
+          </div>
+          <div class="square">
+            <div class="overlay-hidden"></div>
+            <img src="assets/watchlab_05.jpg" alt="A men well dressed wearing a watch from Watch/Lab Collection" />
+            <div class="link--container">
+              <a class="social--link" href="http://">Visit us on Instagram</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- get in touch -->
+    <section class="subscription">
+      <div class="overlay"></div>
+
+      <div class="subscription--box">
+        <h2>Get in Touch</h2>
+        <p class="subscription--box-text">DISCOVER MORE ABOUT NEWS, EXCLUSIVE EVENTS AND DISCOUNT</p>
+
+        <!-- form -->
+        <form role='subscription' class="form">
+          <label for='email'>
+            <span class='visually-hidden'>Email</span>
+          </label>
+          <input type='email' id='email' class="email--input" placeholder="Type your email" />
+          <button type='submit' class="email--button">
+            ok
+          </button>
+        </form>
+      </div>
+    </section>
   </main>
 
   <footer div class="footer">
@@ -60,7 +224,7 @@
         </div>
 
         <div class="footer--information-sitemap">
-          <nav class="footer--navigation">
+          <nav class="footer--navigation" aria-label="Footer Navigation" role="navigation">
             <ul>
               <li>About us</li>
               <li>Brand</li>
@@ -77,13 +241,13 @@
         <div class="footer--information-contact">
           <p>T. +39 392 9133937</p>
           <p>M. info@watch-lab.it</p>
-          <p class="social-media">
+          <p class="social-media-contact">
             <img class='icon' src="assets/icon_facebook.svg" alt='Facebook icon' />
-            FACEBOOK
+            <span class="text-tag">FACEBOOK</span>
           </p>
-          <p class="social-media">
+          <p class="social-media-contact">
             <img class=' icon' src="assets/icon_instagram.svg" alt="Instagram icon" />
-            INSTAGRAM
+            <span class="text-tag">INSTAGRAM</span>
           </p>
         </div>
       </div>
@@ -95,8 +259,8 @@
     </div>
   </footer>
 
-    <!-- js scripts -->  
-    <script type='module' src="./js/index.js"></script>
+  <!-- js scripts -->
+  <script type='module' src="./js/index.js"></script>
 </body>
 
 </html>

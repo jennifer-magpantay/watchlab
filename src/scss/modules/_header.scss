@@ -1,29 +1,36 @@
 @use "../tools/variables" as *;
 @use "../global/global" as *;
 @use "../tools/mixins" as *;
+@use "../tools/responsive" as *;
 
 .header {
+    @include display-flex(center, space-between);
     width: 100%;
     height: 6rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding-right: 8.33%;
     background-color: $color-background;
 
     &--logo {
-        @include logo(1.5rem 3rem, $color-primary, $color-text-lg, 2rem);
+        @include logo(0 3rem, $color-primary, $color-text-lg);
+        @include display-flex(center, "");
     }
 
     &--navigation {
+        display: none;
+
+        @include laptop {
+            display: block;
+        }
+
         ul {
-            display: flex;
-            align-items: center;
+            display: inline-flex;
 
             li {
-                height: 100%;
-                padding: 1.8rem 3rem;
+                @include display-flex(center, "");
+                height: 6rem;
+                padding: 0 2.5rem;
                 font-family: "Montserrat-Regular";
+                font-size: $text-tag;
 
                 &:hover {
                     background-color: $color-primary;

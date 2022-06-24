@@ -1,0 +1,32 @@
+@use "../tools/mixins" as *;
+@use "../tools/variables" as *;
+
+.history {
+    width: 100%;
+    margin: 04rem 0;
+    padding: 04rem;
+
+    h2 {
+        width: 50%;
+        margin-bottom: 05rem;
+    }
+
+    .history--container-content {
+        @include display-flex(flex-start, flex-start);
+    }
+
+    &--content {
+        flex: 1;
+
+        &.first {
+            p {
+                width: 40ch;
+            }
+        }
+
+        &.second {
+            @include display-flex("", flex-end);
+            flex-direction: column;
+        }
+    }
+}

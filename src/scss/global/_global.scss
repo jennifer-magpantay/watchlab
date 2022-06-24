@@ -30,39 +30,74 @@ html {
   scroll-behavior: smooth;
 }
 
+*:focus {
+  outline-color: $color-surface-dk;
+}
+
 h1 {
   font-family: "Miller-Display";
   font-size: $text-display;
   font-style: normal;
-  font-weight: 700;
-  line-height: 1.15;
+  font-weight: 400;
+  line-height: normal;
 }
 
 h2 {
   font-family: "Miller-Display";
   font-size: $text-headline;
   font-style: normal;
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 400;
+  line-height: normal;
 }
 
 h3 {
-  font-family: "Merriweather-Regular";
+  font-family: "Miller-Display";
   font-size: $text-title;
   font-style: normal;
-  font-weight: 700;
-  line-height: 1.3;
-}
-
-p,
-li {
-  font-size: $text-body;
-  line-height: 1.5;
-  max-width: 70ch;
+  font-weight: 400;
+  line-height: normal;
+  margin: 03rem 0;
 }
 
 li {
   list-style-type: none;
+  letter-spacing: 1;
+}
+
+.body--text {
+  color: $color-body-text;
+  font-family: "Merriweather-Regular";
+  font-size: $text-body;
+  letter-spacing: 0.05rem;
+  line-height: 2;
+}
+
+.link {
+  display: block;
+  width: 20rem;
+  padding: 01rem 03rem;
+  background-color: transparent;
+  border: 01px solid $color-primary;
+  color: $color-primary;
+  font-family: "Miller-Display";
+  font-size: $text-body;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-text-lg;
+  }
+}
+
+.social--link {
+  visibility: hidden;
+  padding: 01rem 03rem;
+  background-color: transparent;
+  border: 01px solid $color-text-lg;
+  color: $color-text-lg;
+  font-family: "Miller-Display";
+  font-size: $text-body;
+  text-decoration: none;
 }
 
 .visually-hidden {

@@ -1,0 +1,43 @@
+@use "../tools/mixins" as *;
+@use "../tools/variables" as *;
+
+.intro {
+    @include display-flex(center, center);
+    width: 100%;
+    height: calc(100vh - 8rem);
+    position: relative;
+
+    background-image: url("../assets/intro.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .overlay {
+        @include overlay($opacity);
+    }
+
+    .intro--container-content {
+        @include display-flex(center, space-between);
+        flex-direction: column;
+        width: 50%;
+        height: 60%;
+        position: absolute;
+        text-align: center;
+        z-index: 10;
+
+        .intro-tag {
+            @include tags($color-text-lg, Bold);
+        }
+
+        h1,
+        p {
+            color: $color-text-lg;
+        }
+
+        .intro-text {
+            color: $color-text-lg;
+            font-family: "Montserrat-Regular";
+            font-size: 1.2rem;
+        }
+    }
+}

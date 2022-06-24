@@ -1,0 +1,37 @@
+@use "../tools/mixins" as *;
+@use "../tools/variables" as *;
+
+.press {
+    @include display-flex(center, start);
+    width: 100%;
+    height: calc(100vh - 8rem);
+    margin: 04rem 0;
+    padding-inline: 04rem;
+
+    .content--container {
+        width: 50%;
+        height: 100%;
+
+        h2 {
+            margin-bottom: 05rem;
+        }
+
+        p {
+            width: 34ch;
+        }
+
+        &.slider {
+            position: relative;
+            background-color: $color-surface-lg;
+
+            .slider--container {
+                width: 120%;
+                height: 70%;
+                position: absolute;
+                bottom: 0;
+                right: 04rem;
+                border: 01px solid red;
+            }
+        }
+    }
+}
