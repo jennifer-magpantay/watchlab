@@ -30,8 +30,12 @@ html {
   scroll-behavior: smooth;
 }
 
-*:focus {
-  outline-color: $color-surface-dk;
+a:focus,
+button:focus,
+input:focus {
+  outline-color: $color-primary-dk;
+  outline-style: solid;
+  outline-width: medium;
 }
 
 h1 {
@@ -83,8 +87,9 @@ li {
   font-size: $text-body;
   text-decoration: none;
 
-  &:hover {
-    background-color: $color-primary;
+  &:hover,
+  &:focus {
+    background-color: $color-primary-dk;
     color: $color-text-lg;
   }
 }
@@ -100,6 +105,11 @@ li {
   text-decoration: none;
 }
 
+// Accessibility classes
+.hide {
+  display: none;
+}
+
 .visually-hidden {
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -109,4 +119,22 @@ li {
   overflow: hidden;
   padding: 0;
   position: absolute;
+}
+
+.skip-content-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 02rem;
+  padding: 01rem 03rem;
+  background: #ffffff;
+  border: 01px solid $color-primary-dk;
+  color: $color-primary;
+  transform: translateY(-150%);
+  font-size: $text-body;
+  box-shadow: $box-shadow;
+  transition: transform 0.3s;
+}
+
+.skip-content-link:focus {
+  transform: translateY(0%);
 }
