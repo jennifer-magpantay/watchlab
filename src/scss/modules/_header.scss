@@ -26,16 +26,19 @@
             display: inline-flex;
 
             li {
-                @include display-flex(center, "");
-                height: 6rem;
-                padding: 0 2.5rem;
-                font-family: "Montserrat-Regular";
-                font-size: $text-tag;
+                a {
+                    @include display-flex(center, "");
+                    height: 5rem;
+                    padding: 0 2.5rem;
+                    font-family: "Montserrat-Regular";
+                    font-size: $text-tag;
 
-                &:hover {
-                    background-color: $color-primary;
-                    color: $color-text-lg;
-                    cursor: pointer;
+                    &:hover,
+                    &:focus {
+                        background-color: $color-primary;
+                        color: $color-text-lg;
+                        cursor: pointer;
+                    }
                 }
             }
         }

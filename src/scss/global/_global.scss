@@ -1,5 +1,7 @@
 @use "../tools/variables" as *;
+@use "../tools/mixins" as *;
 
+// Font import
 @font-face {
   font-family: "Merriweather-Regular";
   src: local("Merriweather-Regular");
@@ -24,10 +26,18 @@
   src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
 }
 
+// Global components/tags
 html {
   font-size: 62.5%;
   overflow: auto;
   scroll-behavior: smooth;
+}
+
+a {
+  @include display-flex(center, "");
+  width: fit-content;
+  color: inherit;
+  text-decoration: none;
 }
 
 a:focus,
@@ -68,6 +78,7 @@ li {
   letter-spacing: 1;
 }
 
+// Global classes
 .body--text {
   color: $color-body-text;
   font-family: "Merriweather-Regular";
@@ -92,17 +103,6 @@ li {
     background-color: $color-primary-dk;
     color: $color-text-lg;
   }
-}
-
-.social--link {
-  visibility: hidden;
-  padding: 01rem 03rem;
-  background-color: transparent;
-  border: 01px solid $color-text-lg;
-  color: $color-text-lg;
-  font-family: "Miller-Display";
-  font-size: $text-body;
-  text-decoration: none;
 }
 
 // Accessibility classes

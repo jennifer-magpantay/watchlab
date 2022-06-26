@@ -9,6 +9,9 @@
   <!-- styles -->
   <link rel="stylesheet" href="./scss/style.scss">
 
+  <!-- FontAwesone Icons -->
+  <script src="https://kit.fontawesome.com/b7fbddd43a.js" crossorigin="anonymous"></script>
+
   <title>Watch/Lab - Innovation brings success</title>
 </head>
 
@@ -22,19 +25,31 @@
   <!-- skip content link -->
   <a class="skip-content-link" href="#main">Skip to the main content</a>
 
-  <header class="header">
+  <header class="header" id="top">
     <!-- logo -->
     <span class="header--logo">WATCH/LAB</span>
 
     <!-- header navigation -->
     <nav class="header--navigation" id='header--navigation-js' aria-label="Main Navigation" role="navigation">
       <ul>
-        <li>About us</li>
-        <li>Brand</li>
-        <li>Projects</li>
-        <li>Magazine</li>
-        <li>Press</li>
-        <li>Contact</li>
+        <li>
+          <a class="menu--link-item" href="#about-us">About us</a>
+        </li>
+        <li>
+          <a href="#brand">Brand</a>
+        </li>
+        <li>
+          <a href="#collections">Projects</a>
+        </li>
+        <li>
+          <a href="#magazine">Magazine</a>
+        </li>
+        <li>
+          <a href="#press">Press</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
       </ul>
     </nav>
 
@@ -53,6 +68,10 @@
     </div>
 
     <!-- mobile navigation icon -->
+    <button type='type' class="button--menu hide" id="button-menu-js">
+      <span class='visually-hidden'>Menu</span>
+      <img class='search--button-icon' src="assets/menu.svg" alt="Search button" />
+    </button>
   </header>
 
   <!-- nonscript -->
@@ -72,7 +91,7 @@
     </div>
 
     <!-- History -->
-    <section class="history">
+    <section class="history" id="about-us">
       <h2>History and Patriarcal season</h2>
 
       <div class="history--container-content">
@@ -97,7 +116,7 @@
     </section>
 
     <!-- Temporary Collection -->
-    <section class="collections">
+    <section class="collections" id="collections">
       <div class="collection--content collection-text">
         <p class="section--tag">LONDON COLLECTION SEASON</p>
         <h3>Temporary Store</h3>
@@ -134,7 +153,7 @@
     </section>
 
     <!-- Press -->
-    <section class="press">
+    <section class="press" id="press">
       <div class="content--container">
         <h2>Press from Watch Lab Studio</h2>
         <p class="body--text">On the other hand, we denounce with
@@ -224,9 +243,11 @@
     </section>
   </main>
 
-  <footer div class="footer">
+  <footer div class="footer" id="contact">
     <div class="footer--information">
-      <span class="footer--information-logo">WATCH/LAB</span>
+      <a href="#top">
+        <span class="footer--information-logo">WATCH/LAB</span>
+      </a>
 
       <div class="container--flex">
         <div class="footer--information-location">
@@ -238,28 +259,48 @@
         <div class="footer--information-sitemap">
           <nav class="footer--navigation" aria-label="Footer Navigation" role="navigation">
             <ul>
-              <li>About us</li>
-              <li>Brand</li>
-              <li>Projects</li>
-              <li>Magazine</li>
-              <li>Press</li>
-              <li>Contacts</li>
-              <li>Privacy Policy</li>
-              <li>Serch</li>
+              <li>
+                <a href=" #about-us">About us</a>
+              </li>
+              <li>
+                <a href="#brand">Brand</a>
+              </li>
+              <li>
+                <a href="#collections">Projects</a>
+              </li>
+              <li>
+                <a href="#magazine">Magazine</a>
+              </li>
+              <li>
+                <a href="#press">Press</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+              <li>
+                <a href="#privacy-policy">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#search">Search</a>
+              </li>
             </ul>
           </nav>
         </div>
 
         <div class="footer--information-contact">
-          <p>T. +39 392 9133937</p>
-          <p>M. info@watch-lab.it</p>
+          <p><span class="sr-only">Telephone number</span>T. +39 392 9133937</p>
+          <p><span class="sr-only">Email</span>M. info@watch-lab.it</p>
           <p class="social-media-contact">
-            <img class='icon' src="assets/icon_facebook.svg" alt='Facebook icon' />
-            <span class="text-tag">FACEBOOK</span>
+            <a class="image--link" href="https://www.facebook.com/WLMilano/" target="_blank">
+              <img class='icon' src="assets/icon_facebook.svg" alt='Facebook icon' />
+              <span class="text-tag">FACEBOOK</span>
+            </a>
           </p>
           <p class="social-media-contact">
-            <img class='icon' src="assets/icon_instagram.svg" alt="Instagram icon" />
-            <span class="text-tag">INSTAGRAM</span>
+            <a class="image--link" href="https://www.instagram.com" target="_blank">
+              <img class='icon' src="assets/icon_instagram.svg" alt="Instagram icon" />
+              <span class="text-tag">INSTAGRAM</span>
+            </a>
           </p>
         </div>
       </div>

@@ -7,6 +7,18 @@
     height: calc(100vh - 8rem);
     margin: 04rem 0;
 
+    .social--link {
+        visibility: hidden;
+        margin-inline: auto;
+        padding: 01rem 03rem;
+        background-color: transparent;
+        border: 01px solid $color-text-lg;
+        color: $color-text-lg;
+        font-family: "Miller-Display";
+        font-size: $text-body;
+        text-decoration: none;
+    }
+
     .container--flex {
         @include display-flex(center, center);
         width: 100%;

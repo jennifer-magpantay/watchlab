@@ -5,6 +5,12 @@
 .footer {
     width: 100%;
 
+    a:hover {
+        outline-color: $color-primary-dk;
+        outline-style: solid;
+        outline-width: medium;
+    }
+
     &--information {
         padding: 15rem 8.33% 20rem;
         background-color: $color-surface-dk;
@@ -41,8 +47,6 @@
 
         &-contact {
             .social-media-contact {
-                @include display-flex(center, "");
-
                 .icon {
                     width: 1.6rem;
                     height: 1.6rem;
