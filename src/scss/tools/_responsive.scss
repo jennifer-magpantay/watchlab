@@ -1,5 +1,12 @@
 // Queries following mobile first
 
+$mobile: 600px;
+@mixin mobile {
+  @media (min-width: #{$mobile}) {
+    @content;
+  }
+}
+
 // TABLET
 $tablet: 768px;
 @mixin tablet {

@@ -9,6 +9,8 @@
     height: 6rem;
     padding-right: 8.33%;
     background-color: $color-background;
+    position: relative;
+    z-index: 2;
 
     &--logo {
         @include logo(0 3rem, $color-primary, $color-text-lg);
@@ -41,6 +43,20 @@
                     }
                 }
             }
+        }
+    }
+
+    .button--search {
+        margin-left: auto;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    .button--menu {
+        @include laptop {
+            display: none;
         }
     }
 }

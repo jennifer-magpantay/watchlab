@@ -1,5 +1,6 @@
 @use "../tools/variables" as *;
 @use "../tools/mixins" as *;
+@use "../tools/responsive" as *;
 
 // Font import
 @font-face {
@@ -87,6 +88,28 @@ li {
   line-height: 2;
 }
 
+.button--icon {
+  display: block;
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 0 0.5rem;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    outline-color: $color-primary-dk;
+    outline-style: solid;
+    outline-width: medium;
+  }
+
+  &-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
 .link {
   display: block;
   width: 20rem;
@@ -133,6 +156,7 @@ li {
   font-size: $text-body;
   box-shadow: $box-shadow;
   transition: transform 0.3s;
+  z-index: 10;
 }
 
 .skip-content-link:focus {

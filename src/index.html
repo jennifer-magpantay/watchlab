@@ -19,6 +19,7 @@
   - mobile version 
   - set anchor links to section content
   - set slider
+  - FIX BUG: LATERL SPACE ON BODY IN SMALL SCREENS!! WHY??
 -->
 
 <body>
@@ -59,7 +60,7 @@
         <label for='search'>
           <span class='visually-hidden'>Search</span>
         </label>
-        <input type='text' id='search' class="search--input" placeholder="Search" />
+        <input type='text' id='search' class="search--input" placeholder="Search" aria-label="search text" />
         <button type='submit' class="search--button">
           <span class='visually-hidden'>Submit Search</span>
           <img class='search--button-icon' src="assets/icon_search.svg" alt="Search button" />
@@ -67,12 +68,34 @@
       </form>
     </div>
 
+    <!-- mobile search icon -->
+    <button type='type' class="button--icon button--search" id="button-search-js" aria-expanded="false" aria-controls="search-mobile">
+      <span class='visually-hidden'>Search</span>
+      <img class='button--icon-icon' src="assets/icon_search.svg" alt="Search button" />
+    </button>
+
     <!-- mobile navigation icon -->
-    <button type='type' class="button--menu hide" id="button-menu-js">
+    <button type='type' class="button--icon button--menu" id="button-menu-js">
       <span class='visually-hidden'>Menu</span>
-      <img class='search--button-icon' src="assets/menu.svg" alt="Search button" />
+      <img class='button--icon-icon' src="assets/menu.svg" alt="Menu button" />
     </button>
   </header>
+
+  <!-- search box for mobile -->
+  <div class="search--box-mobile" id="search-box-mobile-js" data-visible="false" id="search-mobile" aria-hidden="true" tabindex="-1">
+    <form role='search'>
+      <label for='search'>
+        <span class='visually-hidden'>Search</span>
+      </label>
+      <input type='text' class="search--input" id='search-input-mobile-js' placeholder="Search" tabindex="-1" />
+      <button type='submit' class="button--icon" id="search-button-mobile-js" tabindex="-1">
+        <span class='visually-hidden'>Submit Search</span>
+        <img class='button--icon-icon' src="assets/icon_search_white.svg" alt="Search button" />
+      </button>
+    </form>
+  </div>
+
+
 
   <!-- nonscript -->
   <noscript>Your browser does not support JavaScript or it is turned off. This would affectd the use of the application</noscript>
