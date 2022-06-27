@@ -9,9 +9,6 @@
   <!-- styles -->
   <link rel="stylesheet" href="./scss/style.scss">
 
-  <!-- FontAwesone Icons -->
-  <script src="https://kit.fontawesome.com/b7fbddd43a.js" crossorigin="anonymous"></script>
-
   <title>Watch/Lab - Innovation brings success</title>
 </head>
 
@@ -30,25 +27,25 @@
     <!-- logo -->
     <span class="header--logo">WATCH/LAB</span>
 
-    <!-- header navigation -->
+    <!-- Main navigation -->
     <nav class="header--navigation" id='header--navigation-js' aria-label="Main Navigation" role="navigation">
-      <ul>
-        <li>
+      <ul class="naviagtion--list" role="menu">
+        <li class="navigation--list-item" role="menuitem">
           <a class="menu--link-item" href="#about-us">About us</a>
         </li>
-        <li>
+        <li class="navigation--list-item" role="menuitem">
           <a href="#brand">Brand</a>
         </li>
-        <li>
+        <li class="navigation--list-item" role="menuitem">
           <a href="#collections">Projects</a>
         </li>
-        <li>
+        <li class="navigation--list-item" role="menuitem">
           <a href="#magazine">Magazine</a>
         </li>
-        <li>
+        <li class="navigation--list-item" role="menuitem">
           <a href="#press">Press</a>
         </li>
-        <li>
+        <li class="navigation--list-item" role="menuitem">
           <a href="#contact">Contact</a>
         </li>
       </ul>
@@ -74,11 +71,35 @@
       <img class='button--icon-icon' src="assets/icon_search.svg" alt="Search button" />
     </button>
 
-    <!-- mobile navigation icon -->
-    <button type='type' class="button--icon button--menu" id="button-menu-js">
+    <!-- mobile navigation button icon -->
+    <button type='type' class="button--icon button--menu" id="button-menu-js" aria-label='Open mobile menu' aria-controls="mobile--navigation-js" aria-expanded="false">
       <span class='visually-hidden'>Menu</span>
-      <img class='button--icon-icon' src="assets/menu.svg" alt="Menu button" />
+      <img class='button--icon-icon' id="icon-mobile-menu-js" src="assets/menu.svg" alt="Menu button" />
     </button>
+
+    <!-- Mobile navigation -->
+    <nav class="header--navigation-mobile" id='mobile--navigation-js' aria-label="Main Navigation for small screens" data-visible='false' role="navigation">
+      <ul role="menu">
+        <li class="navigation--list-item" role="menuitem">
+          <a class="menu--link-item" href="#about-us" tabindex="-1">About us</a>
+        </li>
+        <li class="navigation--list-item" role="menuitem">
+          <a class="menu--link-item" href="#brand" tabindex="-1">Brand</a>
+        </li>
+        <li class="navigation--list-item" role="menuitem">
+          <a class="menu--link-item" href="#collections" tabindex="-1">Projects</a>
+        </li>
+        <li class="navigation--list-item" role="menuitem">
+          <a class="menu--link-item" href="#magazine" tabindex="-1">Magazine</a>
+        </li>
+        <li class="navigation--list-item" role="menuitem">
+          <a class="menu--link-item" href="#press" tabindex="-1">Press</a>
+        </li>
+        <li class="navigation--list-item" role="menuitem">
+          <a class="menu--link-item" href="#contact" tabindex="-1">Contact</a>
+        </li>
+      </ul>
+    </nav>
   </header>
 
   <!-- search box for mobile -->
@@ -94,8 +115,6 @@
       </button>
     </form>
   </div>
-
-
 
   <!-- nonscript -->
   <noscript>Your browser does not support JavaScript or it is turned off. This would affectd the use of the application</noscript>
