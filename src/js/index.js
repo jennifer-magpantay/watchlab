@@ -1,11 +1,11 @@
+import Glide from "@glidejs/glide";
+
 window.addEventListener("load", () => {
   init();
 });
 
 // once page is loaded, allow the following functions to run:
 function init() {
-  console.log("Loading page");
-
   // events
   handleClickSearchBar();
   handleClickMobileMenu();
@@ -58,7 +58,6 @@ function manageMenuMobile() {
   const list = document.querySelectorAll("#mobile--navigation-js ul li a");
 
   if (isNavbarVisible === "false") {
-    console.log(isNavbarVisible);
     buttonMenu.setAttribute("aria-expanded", true);
     buttonMenu.setAttribute("aria-label", "Close menu");
     navbar.setAttribute("data-visible", true);
@@ -75,7 +74,6 @@ function manageMenuMobile() {
     // nav loses focus
     closeMenuWhenLosingFocus(buttonMenu, list, navbar);
   } else {
-    console.log(isNavbarVisible);
     // reset the values when navbar is closed
     resetMobileMenu(buttonMenu, list, navbar);
   }
@@ -128,3 +126,15 @@ function resetMobileMenu(button, list, nav) {
   nav.setAttribute("data-visible", false);
   changeNodeListAttribute(list, "tabindex", "-1");
 }
+
+// Glider.js
+new Glide(".glide", { type: "carousel", perView: 1 }).mount();
+
+/*
+new Glide(".glide", {
+        type: "carousel",
+        autoplay: 3500,
+        perView: 4,
+        gap: 20,
+      }).mount();
+*/

@@ -12,12 +12,7 @@
   <title>Watch/Lab - Innovation brings success</title>
 </head>
 
-<!-- TODO: 
-  - mobile version 
-  - set anchor links to section content
-  - set slider
-  - FIX BUG: LATERL SPACE ON BODY IN SMALL SCREENS!! WHY??
--->
+<!-- TODO: set slider intro -->
 
 <body>
   <!-- skip content link -->
@@ -126,15 +121,22 @@
 
       <div class="intro--container-content">
         <p class="intro-tag">LONDON COLLECTION SEASON</p>
-        <h1>New Selection Of Herny London</h1>
+        <h1><span class="line-break">New Selection Of</span> Henry London</h1>
         <p class="intro-text">An estimable experience in the modern collection house</p>
         <a class="link" href="http://">Discover</a>
+      </div>
+
+      <!-- small slider -->
+      <div class="intro--slider">
+        <div class="intro--slider-image">
+          <img class="image-fit" src="assets/watchlab_07.jpg" alt="Luxury watch by Watch Lab">
+        </div>
       </div>
     </div>
 
     <!-- History -->
     <section class="history" id="about-us">
-      <h2>History and Patriarcal season</h2>
+      <h2><span class="line-break">History and</span> Patriarcal season</h2>
 
       <div class="history--container-content">
         <div class="history--content first">
@@ -171,7 +173,7 @@
       </div>
 
       <div class="collection--content collection-img">
-        <img src="assets/new-collection_01.jpg" alt="House with minimalist design in a field with trees beside of it, convered and surrounded by light snow.">
+        <img class="image-fit" src="assets/new-collection_01.jpg" alt="House with minimalist design in a field with trees beside of it, convered and surrounded by light snow." />
       </div>
     </section>
 
@@ -179,7 +181,7 @@
     <!-- New Collection -->
     <section class="collections">
       <div class="collection--content collection-img">
-        <img src="assets/new-collection_02.jpg" alt="House with minimalist design in a field surrounded by trees.">
+        <img class="image-fit" src="assets/new-collection_02.jpg" alt="House with minimalist design in a field surrounded by trees.">
       </div>
 
       <div class="collection--content collection-text">
@@ -196,8 +198,11 @@
 
     <!-- Press -->
     <section class="press" id="press">
-      <div class="content--container">
-        <h2>Press from Watch Lab Studio</h2>
+      <div class="press--container-content">
+        <h2>
+          <span class="line-break">Press from</span>
+          Watch Lab Studio
+        </h2>
         <p class="body--text">On the other hand, we denounce with
           righteous indignation and dislike men
           who are so beguiled and demoralized
@@ -206,59 +211,111 @@
           they cannot foresee the pain trouble</p>
       </div>
 
-      <div class="content--container slider">
-        <!-- slider -->
+      <div class="press--container-content slider">
         <div class="slider--container">
 
-        </div>
-      </div>
+          <!-- glide js -->
+          <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides">
+                <li class="glide__slide">
+                  <!-- glide content -->
+                  <div class="glide--container-content">
+                    <div class="glide--content content-img">
+                      <img class="image-fit" src="assets/watchlab_06.png" alt="Designers building a watch" />
+                    </div>
+                    <div class="glide--content content-text">
+                      <p class="content--label">Press</p>
+                      <p class="content--date">8 SETTEMBRE 2015</p>
+                      <h4><span class="line-break">Most Important</span>Days on Watchlab</h4>
+                    </div>
+                  </div>
+                </li>
 
+                <li class="glide__slide">
+                  <!-- glide content -->
+                  <div class="glide--container-content">
+                    <div class="glide--content content-img">
+                      <img class="image-fit" src="assets/new-collection_01.jpg" alt="House with minimalist design in a field with trees beside of it, convered and surrounded by light snow." />
+                    </div>
+                    <div class="glide--content content-text">
+                      <p class="content--label">Press</p>
+                      <p class="content--date">01 OCTOBER 2015</p>
+                      <h4><span class="line-break">Temporary</span>Store</h4>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="glide__slide">
+                  <!-- glide content -->
+                  <div class="glide--container-content">
+                    <div class="glide--content content-img">
+                      <img class="image-fit" src="assets/new-collection_02.jpg" alt="House with minimalist design in a field surrounded by trees." />
+                    </div>
+                    <div class="glide--content content-text">
+                      <p class="content--label">Press</p>
+                      <p class="content--date">12 NOVEMBER 2015</p>
+                      <h4><span class="line-break">New Collection</span>Henry London</h4>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- glide controls -->
+            <div class="glide--container-controls" data-glide-el="controls">
+              <button class="button--controls" data-glide-dir="<">
+                <img class="button--controls-icon" src="assets/chevron-left.svg" alt="Icon indicating to left" />
+              </button>
+              <button class="button--controls" data-glide-dir=">">
+                <img class="button--controls-icon" class="glide__arrow--icon" src="assets/chevron-right.svg" alt="Icon indicating to right" />
+              </button>
+            </div>
+          </div>
+
+        </div>
     </section>
 
     <!-- Discover - Instagram -->
-    <section class="discover">
-      <div class="container--flex">
-        <div class="img--container highlight">
-          <div class="overlay"></div>
-          <img src="assets/watchlab_01.jpg" alt="A men well dressed wearing a watch from Watch/Lab Collection" />
+    <section class=" discover">
+      <div class="img--container highlight">
+        <div class="overlay"></div>
+        <img class="image-fit" src="assets/watchlab_01.jpg" alt="A men well dressed wearing a watch from Watch/Lab Collection" />
 
-          <div class="img--container-text">
-            <p>Instagram</p>
-            <h2>Discover Watch Lab</h2>
+        <div class="img--container-text">
+          <p>Instagram</p>
+          <h2><span class="line-break">Discover</span>Watch Lab</h2>
+          <a class="social--link" href="http://">Visit us on Instagram</a>
+        </div>
+      </div>
+
+      <div class="img--container collection">
+        <div class="square">
+          <div class="overlay-hidden"></div>
+          <img class="image-fit" src="assets/watchlab_02.jpg" alt="A men well dressed wearing a watch from Watch/Lab Collection" />
+          <div class="link--container">
             <a class="social--link" href="http://">Visit us on Instagram</a>
           </div>
-
         </div>
-        <div class="img--container collection">
-          <div class="square">
-            <div class="overlay-hidden"></div>
-            <img src="assets/watchlab_02.jpg" alt="A men well dressed wearing a watch from Watch/Lab Collection" />
-            <div class="link--container">
-              <a class="social--link" href="http://">Visit us on Instagram</a>
-            </div>
+        <div class="square">
+          <div class="overlay-hidden"></div>
+          <img class="image-fit" src="assets/watchlab_03.jpg" alt="A men well dressed wearing a watch from Watch/Lab Collection" />
+          <div class="link--container">
+            <a class="social--link" href="http://">Visit us on Instagram</a>
           </div>
-          <div class="square">
-            <div class="overlay-hidden"></div>
-            <img src="assets/watchlab_03.jpg" alt="A men well dressed wearing a watch from Watch/Lab Collection" />
-            <div class="link--container">
-              <a class="social--link" href="http://">Visit us on Instagram</a>
-            </div>
+        </div>
+        <div class="square">
+          <div class="overlay-hidden"></div>
+          <img class="image-fit" src="assets/watchlab_04.jpg" alt="A men well dressed wearing a watch from Watch/Lab Collection" />
+          <div class="link--container">
+            <a class="social--link" href="http://">Visit us on Instagram</a>
           </div>
-          <div class="square">
-            <div class="overlay-hidden"></div>
-            <img src="assets/watchlab_04.jpg" alt="A men well dressed wearing a watch from Watch/Lab Collection" />
-            <div class="link--container">
-              <a class="social--link" href="http://">Visit us on Instagram</a>
-            </div>
+        </div>
+        <div class="square">
+          <div class="overlay-hidden"></div>
+          <img class="image-fit" src="assets/watchlab_05.jpg" alt="A men well dressed wearing a watch from Watch/Lab Collection" />
+          <div class="link--container">
+            <a class="social--link" href="http://">Visit us on Instagram</a>
           </div>
-          <div class="square">
-            <div class="overlay-hidden"></div>
-            <img src="assets/watchlab_05.jpg" alt="A men well dressed wearing a watch from Watch/Lab Collection" />
-            <div class="link--container">
-              <a class="social--link" href="http://">Visit us on Instagram</a>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
@@ -269,7 +326,7 @@
 
       <div class="subscription--box">
         <h2>Get in Touch</h2>
-        <p class="subscription--box-text">DISCOVER MORE ABOUT NEWS, EXCLUSIVE EVENTS AND DISCOUNT</p>
+        <p class="subscription--box-text"><span class="line-break">DISCOVER MORE ABOUT NEWS,</span> EXCLUSIVE EVENTS AND DISCOUNT</p>
 
         <!-- form -->
         <form role='subscription' class="form">
@@ -330,8 +387,8 @@
         </div>
 
         <div class="footer--information-contact">
-          <p><span class="sr-only">Telephone number</span>T. +39 392 9133937</p>
-          <p><span class="sr-only">Email</span>M. info@watch-lab.it</p>
+          <p><span class="visually-hidden">Telephone number</span>T. +39 392 9133937</p>
+          <p><span class="visually-hidden">Email</span>M. info@watch-lab.it</p>
           <p class="social-media-contact">
             <a class="image--link" href="https://www.facebook.com/WLMilano/" target="_blank">
               <img class='icon' src="assets/icon_facebook.svg" alt='Facebook icon' />
@@ -355,6 +412,7 @@
   </footer>
 
   <!-- js scripts -->
+  <!-- <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script> -->
   <script type='module' src="./js/index.js"></script>
 </body>
 
