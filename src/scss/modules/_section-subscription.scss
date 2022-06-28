@@ -1,11 +1,12 @@
 @use "../tools/mixins" as *;
 @use "../tools/variables" as *;
+@use "../tools/responsive" as *;
 
 // get in touch
 .subscription {
     @include display-flex(center, center);
     width: 100%;
-    height: 50vh;
+    height: 25vh;
     position: relative;
 
     background-image: url("../assets/email-subscription.jpg");
@@ -13,21 +14,38 @@
     background-repeat: no-repeat;
     background-size: cover;
 
+    @include laptop {
+        height: 45vh;
+    }
+
     .overlay {
         @include overlay($opacity-primary);
     }
 
     &--box {
+        width: auto;
         position: absolute;
-        max-width: 450px;
         color: $color-text-lg;
         text-align: center;
         z-index: 10;
 
+        @include tablet {
+            max-width: 450px;
+        }
+
         &-text {
             @include tags($color-text-lg, Bold);
-            width: 400px;
+            width: 300px;
+            margin-inline: auto;
             margin-bottom: 02rem;
+
+            @include mobile {
+                width: 350px;
+            }
+
+            @include laptop {
+                width: 395px;
+            }
         }
 
         .form {
@@ -41,6 +59,7 @@
             background-color: transparent;
             border: 01px solid $color-text-lg;
             color: $color-text-lg;
+            font-family: "Miller-Display";
             font-size: $text-body;
         }
 

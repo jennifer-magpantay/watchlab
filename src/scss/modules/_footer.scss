@@ -1,5 +1,6 @@
 @use "../tools/variables" as *;
 @use "../tools/mixins" as *;
+@use "../tools/responsive" as *;
 @use "../global" as *;
 
 .footer {
@@ -12,8 +13,12 @@
     }
 
     &--information {
-        padding: 15rem 8.33% 20rem;
+        padding: 5rem 8.33%;
         background-color: $color-surface-dk;
+
+        @include laptop {
+            padding: 15rem 8.33% 20rem;
+        }
 
         p,
         li {
@@ -28,15 +33,26 @@
         }
 
         .container--flex {
-            @include display-flex(flex-start, space-between);
-            height: 12rem;
             margin-top: 02rem;
+
+            @include laptop {
+                @include display-flex(flex-start, space-between);
+                flex-direction: row;
+                height: 12rem;
+            }
 
             & div {
                 flex: 1;
 
                 &:not(:last-child) {
-                    margin-right: 05rem;
+                    margin-bottom: 05rem;
+                }
+
+                @include laptop {
+                    &:not(:last-child) {
+                        margin-bottom: unset;
+                        margin-right: 05rem;
+                    }
                 }
             }
         }

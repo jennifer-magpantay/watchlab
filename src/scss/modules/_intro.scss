@@ -20,19 +20,9 @@
     .intro--container-content {
         @include display-flex(center, space-between);
         flex-direction: column;
-        width: 75%;
-        height: 60%;
         position: absolute;
         text-align: center;
         z-index: 10;
-
-        @include tablet {
-            width: 60%;
-        }
-
-        @include laptop {
-            width: 50%;
-        }
 
         .intro-tag {
             @include tags($color-text-lg, Bold);
@@ -41,12 +31,27 @@
         h1,
         p {
             color: $color-text-lg;
+            margin-bottom: 02rem;
         }
 
         .intro-text {
             color: $color-text-lg;
             font-family: "Montserrat-Regular";
             font-size: 1.2rem;
+        }
+    }
+
+    &--slider {
+        width: 25%;
+        height: 40%;
+        position: absolute;
+        right: 04rem;
+        bottom: 0;
+
+        &-image {
+            width: 100%;
+            height: 100%;
+           
         }
     }
 }

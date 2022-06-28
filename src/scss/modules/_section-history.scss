@@ -1,18 +1,23 @@
 @use "../tools/mixins" as *;
 @use "../tools/variables" as *;
+@use "../tools/responsive" as *;
 
 .history {
     width: 100%;
-    margin: 04rem 0;
     padding: 04rem;
 
+    @include laptop {
+        margin: 04rem 0;
+    }
+
     h2 {
-        width: 50%;
         margin-bottom: 05rem;
     }
 
     .history--container-content {
-        @include display-flex(flex-start, flex-start);
+        @include laptop {
+            @include display-flex(flex-start, flex-start);
+        }
     }
 
     &--content {
@@ -20,7 +25,11 @@
 
         &.first {
             p {
-                width: 40ch;
+                margin-bottom: 02rem;
+                @include laptop {
+                    width: 40ch;
+                    margin-bottom: unset;
+                }
             }
         }
 

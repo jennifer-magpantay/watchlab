@@ -1,11 +1,16 @@
 @use "../tools/mixins" as *;
 @use "../tools/variables" as *;
+@use "../tools/responsive" as *;
 
 // Discover - Instagram
 .discover {
     width: 100%;
-    height: calc(100vh - 8rem);
     margin: 04rem 0;
+
+    @include laptop {
+        @include display-flex(center, center);
+        height: calc(100vh - 8rem);
+    }
 
     .social--link {
         visibility: hidden;
@@ -19,89 +24,72 @@
         text-decoration: none;
     }
 
-    .container--flex {
-        @include display-flex(center, center);
-        width: 100%;
+    .img--container {
+        flex: 1;
         height: 100%;
 
-        .img--container {
-            width: 50%;
-            height: 100%;
+        &.highlight {
+            @include display-flex(center, center);
+            position: relative;
 
-            &.highlight {
+            .overlay {
+                @include overlay($opacity);
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                .social--link {
+                    visibility: visible;
+                }
+            }
+        }
+
+        &.collection {
+            display: flex;
+            flex-wrap: wrap;
+
+            .square {
                 @include display-flex(center, center);
+                width: 50%;
+                height: 50%;
                 position: relative;
 
-                .overlay {
+                .overlay-hidden {
                     @include overlay($opacity);
+                    visibility: hidden;
                 }
 
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
+                .link--container {
+                    position: absolute;
+                    text-align: center;
                 }
 
                 &:hover {
-                    cursor: pointer;
-
+                    .overlay-hidden {
+                        visibility: visible;
+                    }
                     .social--link {
                         visibility: visible;
                     }
                 }
             }
+        }
 
-            &.collection {
-                display: flex;
-                flex-wrap: wrap;
+        &-text {
+            width: 85%;
+            position: absolute;
+            text-align: center;
+            color: $color-text-lg;
 
-                .square {
-                    @include display-flex(center, center);
-                    width: 50%;
-                    height: 50%;
-                    position: relative;
-
-                    .overlay-hidden {
-                        @include overlay($opacity);
-                        visibility: hidden;
-                    }
-
-                    .link--container {
-                        position: absolute;
-                        text-align: center;
-                    }
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                    }
-
-                    &:hover {
-                        .overlay-hidden {
-                            visibility: visible;
-                        }
-                        .social--link {
-                            visibility: visible;
-                        }
-                    }
-                }
+            h2 {
+                margin-inline: auto;
+                margin-bottom: 02rem;
             }
 
-            &-text {
-                width: 60%;
-                position: absolute;
-                text-align: center;
-                color: $color-text-lg;
-
-                h2 {
-                    margin-bottom: 02rem;
-                }
-
-                p {
-                    @include tags($color-text-lg, Bold);
-                    margin-bottom: 03rem;
-                }
+            p {
+                @include tags($color-text-lg, Bold);
+                margin-bottom: 03rem;
             }
         }
     }

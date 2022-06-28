@@ -1,5 +1,19 @@
 // Queries following mobile first
 
+$small-mobile: 375px;
+@mixin small-mobile {
+  @media (min-width: #{$small-mobile}) {
+    @content;
+  }
+}
+
+$large-mobile: 425px;
+@mixin large-mobile {
+  @media (min-width: #{$large-mobile}) {
+    @content;
+  }
+}
+
 $mobile: 600px;
 @mixin mobile {
   @media (min-width: #{$mobile}) {
