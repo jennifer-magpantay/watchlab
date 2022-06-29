@@ -6,11 +6,16 @@
 
 ## Goals
 
-Develop a rensposive landing page based on desing provide. 
+Develop a rensposive landing page based on desing provided.
 
 ## Status
 
 Finished.
+
+## Considerations
+
+- The slider at the intro section is displayed only in the laptop version, avoiding over content in small screens and keeping the clean design of the page;
+- A second version of the landing page would surely consider contrast for most of the texts, making sure it is 100% readable for all types of visitors.
 
 ## Run locally
 
@@ -53,4 +58,3 @@ Desing by nss factory and developed by Jennifer Magpantay.
 ## Support
 
 Show some love and support. Give this project a star if it helped you.
- 
