@@ -2,6 +2,9 @@
 @use "../tools/mixins" as *;
 @use "../tools/responsive" as *;
 
+// Required Core Stylesheet import for Glide
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+
 // Font import
 @font-face {
   font-family: "Merriweather-Regular";
@@ -50,36 +53,24 @@ input:focus {
 }
 
 h1 {
-  font-family: "Miller-Display";
-  font-size: $text-display;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  @include font-setup($color-text-lg, Miller-Display, $text-display);
 }
 
 h2 {
-  font-family: "Miller-Display";
-  font-size: $text-headline;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  @include font-setup($color-title, Miller-Display, $text-headline);
 }
 
 h3 {
-  font-family: "Miller-Display";
-  font-size: $text-title;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  @include font-setup($color-title, Miller-Display, $text-title);
   margin: 03rem 0;
 }
 
 h4 {
-  font-family: "Miller-Display";
-  font-size: $text-subtitle;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  @include font-setup($color-title, Miller-Display, $text-subtitle);
+}
+
+h5 {
+  @include font-setup($color-text-lg, Miller-Display, $text-body);
 }
 
 li {
@@ -116,6 +107,14 @@ li {
     height: 100%;
     object-fit: contain;
   }
+}
+
+.full-heigth {
+  height: 100%;
+}
+
+.headline-lg {
+  @include font-setup($color-text-lg, Miller-Display, $text-headline);
 }
 
 .image-fit {

@@ -35,23 +35,36 @@
         }
 
         .intro-text {
-            color: $color-text-lg;
-            font-family: "Montserrat-Regular";
-            font-size: 1.2rem;
+            @include font-setup($color-text-lg, Montserrat-Regular, 1.2rem);
         }
     }
 
     &--slider {
-        width: 25%;
-        height: 40%;
-        position: absolute;
-        right: 04rem;
-        bottom: 0;
+        display: none;
 
-        &-image {
+        @include laptop {
+            display: block;
+            width: 25%;
+            height: 40%;
+            position: absolute;
+            right: 04rem;
+            bottom: 0;
+        }
+
+        &-overlay {
+            @include overlay($opacity);
+        }
+
+        &-content {
             width: 100%;
             height: 100%;
-           
+            position: relative;
+
+            .content--text {
+                position: absolute;
+                top: 01rem;
+                left: 01.5rem;
+            }
         }
     }
 }

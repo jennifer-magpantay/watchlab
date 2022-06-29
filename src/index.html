@@ -133,8 +133,46 @@
 
       <!-- small slider -->
       <div class="intro--slider">
-        <div class="intro--slider-image">
-          <img class="image-fit" src="assets/watchlab_07.jpg" alt="Luxury watch by Watch Lab">
+        <!-- glide -->
+        <div class="glide" id="intro-glide">
+          <div class="glide__track full-heigth" data-glide-el="track">
+            <ul class="glide__slides full-heigth">
+              <li class="glide__slide full-heigth">
+                <div class="intro--slider-content">
+                  <div class="intro--slider-overlay"></div>
+                  <h5 class="content--text"><span class="line-break">The Path to Success</span>
+                    with Watchlab</h5>
+                  <img class="image-fit" src="assets/watchlab_07.jpg" alt="Luxury watch by Watch Lab" />
+                </div>
+              </li>
+              <li class="glide__slide full-heigth">
+                <div class="intro--slider-content">
+                   <div class="intro--slider-overlay"></div>
+                  <h5 class="content--text"><span class="line-break">Most Important</span>Days on Watchlab</h5>
+                  <img class="image-fit" src="assets/watchlab_06.png" alt="Designers building a watch" />
+                </div>
+              </li>
+              <li class="glide__slide full-heigth">
+                <div class="intro--slider-content">
+                   <div class="intro--slider-overlay"></div>
+                  <h5 class="content--text"><span class="line-break">Temporary</span>Store</h5>
+                  <img class="image-fit" src="assets/new-collection_01.jpg" alt="House with minimalist design in a field with trees beside of it, convered and surrounded by light snow." />
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- glide controls -->
+          <div class="slider--controls" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left slider--button prev" data-glide-dir="<">
+              <img class="image-fit" src="assets/chevron-left-white.svg" alt="" srcset="">
+              <span class="slider--button-text">PREV</span>
+            </button>
+            <button class="glide__arrow glide__arrow--right slider--button next" data-glide-dir=">">
+              <span class="slider--button-text">Next</span>
+              <img class="image-fit" src="assets/chevron-right-white.svg" alt="" srcset="">
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -220,10 +258,10 @@
         <div class="slider--container">
 
           <!-- glide js -->
-          <div class="glide">
-            <div class="glide__track" data-glide-el="track">
-              <ul class="glide__slides">
-                <li class="glide__slide">
+          <div id="press-glide" class="glide">
+            <div class="glide__track full-heigth" data-glide-el="track">
+              <ul class="glide__slides full-heigth">
+                <li class="glide__slide full-heigth">
                   <!-- glide content -->
                   <div class="glide--container-content">
                     <div class="glide--content content-img">
@@ -237,7 +275,7 @@
                   </div>
                 </li>
 
-                <li class="glide__slide">
+                <li class="glide__slide full-heigth">
                   <!-- glide content -->
                   <div class="glide--container-content">
                     <div class="glide--content content-img">
@@ -251,7 +289,7 @@
                   </div>
                 </li>
 
-                <li class="glide__slide">
+                <li class="glide__slide full-heigth">
                   <!-- glide content -->
                   <div class="glide--container-content">
                     <div class="glide--content content-img">
@@ -266,6 +304,7 @@
                 </li>
               </ul>
             </div>
+            
             <!-- glide controls -->
             <div class="glide--container-controls" data-glide-el="controls">
               <button class="button--controls" data-glide-dir="<">
@@ -288,7 +327,7 @@
 
         <div class="img--container-text">
           <p>Instagram</p>
-          <h2><span class="line-break">Discover</span>Watch Lab</h2>
+          <h2 class="headline-lg"><span class="line-break">Discover</span>Watch Lab</h2>
           <a class="social--link" href="http://">Visit us on Instagram</a>
         </div>
       </div>
@@ -330,7 +369,7 @@
       <div class="overlay"></div>
 
       <div class="subscription--box">
-        <h2>Get in Touch</h2>
+        <h2 class="headline-lg">Get in Touch</h2>
         <p class="subscription--box-text"><span class="line-break">DISCOVER MORE ABOUT NEWS,</span> EXCLUSIVE EVENTS AND DISCOUNT</p>
 
         <!-- form -->

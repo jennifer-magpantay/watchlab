@@ -6,10 +6,22 @@ window.addEventListener("load", () => {
 
 // once page is loaded, allow the following functions to run:
 function init() {
+  // creating sliders
+  intro.mount();
+  press.mount();
+
   // events
   handleClickSearchBox();
   handleClickMobileMenu();
 }
+
+// Sliders
+const intro = new Glide("#intro-glide", { type: "slider", perView: 1 });
+const press = new Glide("#press-glide", {
+  type: "carousel",
+  animationDuration: 1000,
+  perView: 1,
+});
 
 // events
 function handleClickSearchBox() {
@@ -19,13 +31,12 @@ function handleClickSearchBox() {
   buttonExpandSearch.addEventListener("click", expandSearchBox);
 }
 
-// function handleClickCloseSearchBox() {}
-
 function handleClickMobileMenu() {
   const buttonMenu = document.querySelector("#button-menu-js");
   buttonMenu.addEventListener("click", manageMenuMobile);
 }
 
+// Searchbox functions
 function expandSearchBox() {
   const buttonExpandSearch = document.querySelector("#button-expand-search-js");
   const searchBox = document.querySelector("#search-box-mobile-js");
@@ -33,7 +44,7 @@ function expandSearchBox() {
   const list = document.querySelectorAll(
     "#search-box-mobile-js [tabindex='-1']"
   );
-  // list returns #search-input-mobile-js, #search-submit-button-mobile-js, #button-close-search-js
+  // list returns all focusable elements
 
   // check attribute on component
   const isSearchBoxVisible = searchBox.getAttribute("data-visible");
@@ -49,7 +60,12 @@ function expandSearchBox() {
 
     // once content is visible, allow it to be closed by:
     // escape key
-
+    closeSearchByEscapeKey(
+      searchBox,
+      buttonExpandSearch,
+      buttonCloseSearch,
+      list
+    );
     // when input loses focus
     closeSearchBoxWhenLosingFocus(
       searchBox,
@@ -70,6 +86,63 @@ function expandSearchBox() {
   }
 }
 
+function closeSearchByEscapeKey(searchbox, expandButton, closeButton, list) {
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      resetMobileSearch(searchbox, expandButton, closeButton, list);
+    }
+  });
+}
+
+function closeSearchBoxOutsideDiv(searchbox, expandButton, closeButton, list) {
+  const img = document.querySelector("#icon-expand-search-js");
+  const input = document.querySelector("#search-input-mobile-js");
+  const isVisible = searchbox.getAttribute("data-visible");
+
+  if (isVisible === "true") {
+    window.addEventListener("click", (event) => {
+      if (
+        event.target === img ||
+        event.target === searchbox ||
+        event.target === input ||
+        event.target === expandButton
+      ) {
+        return null;
+      } else {
+        resetMobileSearch(searchbox, expandButton, closeButton, list);
+      }
+    });
+  }
+}
+
+function closeSearchBoxWhenLosingFocus(
+  searchbox,
+  expandButton,
+  closeButton,
+  list
+) {
+  window.addEventListener("focusin", (event) => {
+    if (
+      event.target.id === "search-input-mobile-js" ||
+      event.target.id === "search-submit-button-mobile-js" ||
+      event.target.id === "button-close-search-js"
+    ) {
+      return null;
+    } else {
+      resetMobileSearch(searchbox, expandButton, closeButton, list);
+    }
+  });
+}
+
+function resetMobileSearch(searchbox, expandButton, closeButton, list) {
+  searchbox.setAttribute("data-visible", false);
+  searchbox.setAttribute("aria-hidden", true);
+  expandButton.setAttribute("aria-expanded", false);
+  closeButton.setAttribute("aria-expanded", false);
+  changeNodeListAttribute(list, "tabindex", "-1");
+}
+
+// Mobile functions
 function manageMenuMobile() {
   const buttonMenu = document.querySelector("#button-menu-js");
   const navbar = document.querySelector("#mobile--navigation-js");
@@ -93,35 +166,6 @@ function manageMenuMobile() {
 
 function changeNodeListAttribute(list, attribute, value) {
   list.forEach((item) => item.setAttribute(attribute, value));
-}
-
-function closeSearchBox(searchbox, input, button, mobileButton, list) {
-  const buttonClose = document.querySelector("#button-close-search-js");
-  buttonClose.addEventListener(
-    "click",
-    resetMobileSearch(searchbox, input, button, mobileButton, list)
-  );
-}
-
-function closeSearchBoxOutsideDiv(searchbox, expandButton, closeButton, list) {
-  const img = document.querySelector("#icon-expand-search-js");
-  const input = document.querySelector("#search-input-mobile-js");
-  const isVisible = searchbox.getAttribute("data-visible");
-
-  if (isVisible === "true") {
-    window.addEventListener("click", (event) => {
-      if (
-        event.target === img ||
-        event.target === searchbox ||
-        event.target === input ||
-        event.target === expandButton
-      ) {
-        return null;
-      } else {
-        resetMobileSearch(searchbox, expandButton, closeButton, list);
-      }
-    });
-  }
 }
 
 function closeMenuByClickOutsideNav(button, list, nav) {
@@ -161,39 +205,9 @@ function closeMenuWhenLosingFocus(button, list, nav) {
   });
 }
 
-function closeSearchBoxWhenLosingFocus(
-  searchbox,
-  expandButton,
-  closeButton,
-  list
-) {
-  window.addEventListener("focusin", (event) => {
-    if (
-      event.target.id === "search-input-mobile-js" ||
-      event.target.id === "search-submit-button-mobile-js" ||
-      event.target.id === "button-close-search-js"
-    ) {
-      return null;
-    } else {
-      resetMobileSearch(searchbox, expandButton, closeButton, list);
-    }
-  });
-}
-
 function resetMobileMenu(button, list, nav) {
   button.setAttribute("aria-expanded", false);
   button.setAttribute("aria-label", "Open menu");
   nav.setAttribute("data-visible", false);
   changeNodeListAttribute(list, "tabindex", "-1");
 }
-
-function resetMobileSearch(searchbox, expandButton, closeButton, list) {
-  searchbox.setAttribute("data-visible", false);
-  searchbox.setAttribute("aria-hidden", true);
-  expandButton.setAttribute("aria-expanded", false);
-  closeButton.setAttribute("aria-expanded", false);
-  changeNodeListAttribute(list, "tabindex", "-1");
-}
-
-// Glider.js
-new Glide(".glide", { type: "carousel", perView: 1 }).mount();

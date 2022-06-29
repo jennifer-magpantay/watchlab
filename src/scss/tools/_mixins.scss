@@ -16,6 +16,15 @@
   text-transform: uppercase;
 }
 
+@mixin font-setup($color, $family, $size, ) {
+  color: #{$color};
+  font-family: #{$family};
+  font-size: #{$size};
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 @mixin overlay($bg-color) {
   position: absolute;
   inset: 0;

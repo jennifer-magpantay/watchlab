@@ -1,9 +1,9 @@
 @use "../tools/mixins" as *;
-@use "../tools/variables" as *;
-@use "../tools/responsive" as *;
 
-// Required Core Stylesheet
-@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+#press-glide {
+    width: 100%;
+    height: 100%;
+}
 
 .glide--container-controls {
     @include display-flex(center, "");
