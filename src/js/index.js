@@ -7,47 +7,66 @@ window.addEventListener("load", () => {
 // once page is loaded, allow the following functions to run:
 function init() {
   // events
-  handleClickSearchBar();
+  handleClickSearchBox();
   handleClickMobileMenu();
 }
 
 // events
-function handleClickSearchBar() {
+function handleClickSearchBox() {
   // declare variables
-  const buttonSearch = document.querySelector("#button-search-js");
+  const buttonExpandSearch = document.querySelector("#button-expand-search-js");
   // add eventListener, calling a function to manage the component
-  buttonSearch.addEventListener("click", expandSearchBar);
+  buttonExpandSearch.addEventListener("click", expandSearchBox);
 }
+
+// function handleClickCloseSearchBox() {}
 
 function handleClickMobileMenu() {
   const buttonMenu = document.querySelector("#button-menu-js");
   buttonMenu.addEventListener("click", manageMenuMobile);
 }
 
-function expandSearchBar() {
-  const buttonSearch = document.querySelector("#button-search-js");
+function expandSearchBox() {
+  const buttonExpandSearch = document.querySelector("#button-expand-search-js");
   const searchBox = document.querySelector("#search-box-mobile-js");
-  const inputSearch = document.querySelector("#search-input-mobile-js");
-  const buttonSearchMobile = document.querySelector("#search-button-mobile-js");
+  const buttonCloseSearch = document.querySelector("#button-close-search-js");
+  const list = document.querySelectorAll(
+    "#search-box-mobile-js [tabindex='-1']"
+  );
+  // list returns #search-input-mobile-js, #search-submit-button-mobile-js, #button-close-search-js
 
   // check attribute on component
   const isSearchBoxVisible = searchBox.getAttribute("data-visible");
   // check attribute value to change it
   if (isSearchBoxVisible === "false") {
     searchBox.setAttribute("data-visible", true);
-    // make the components 'focusable'
-    inputSearch.setAttribute("tabindex", "0");
-    buttonSearchMobile.setAttribute("tabindex", "0");
     // also make changes to aria-rules, for screen readers
     searchBox.setAttribute("aria-hidden", false);
-    buttonSearch.setAttribute("aria-expanded", true);
+    buttonExpandSearch.setAttribute("aria-expanded", true);
+    buttonCloseSearch.setAttribute("aria-expanded", true);
+    // make the components 'focusable'
+    changeNodeListAttribute(list, "tabindex", "0");
+
+    // once content is visible, allow it to be closed by:
+    // escape key
+
+    // when input loses focus
+    closeSearchBoxWhenLosingFocus(
+      searchBox,
+      buttonExpandSearch,
+      buttonCloseSearch,
+      list
+    );
+    // when user clicks outside search box
+    closeSearchBoxOutsideDiv(
+      searchBox,
+      buttonExpandSearch,
+      buttonCloseSearch,
+      list
+    );
   } else {
     // if button is clicked again, reset the attributes
-    searchBox.setAttribute("data-visible", false);
-    inputSearch.setAttribute("tabindex", "-1");
-    buttonSearchMobile.setAttribute("tabindex", "-1");
-    searchBox.setAttribute("aria-hidden", true);
-    buttonSearch.setAttribute("aria-expanded", false);
+    resetMobileSearch(searchBox, buttonExpandSearch, buttonCloseSearch, list);
   }
 }
 
@@ -63,24 +82,46 @@ function manageMenuMobile() {
     navbar.setAttribute("data-visible", true);
     changeNodeListAttribute(list, "tabindex", "0");
 
-    // closing menu options
-    // once navbar is expanded (has data-visible set as true), allow it to be closed when:
-    // user clicks on a link or outside the navbar
+    // closing options
     closeMenuByClickOutsideNav(buttonMenu, list, navbar);
-
-    // user press esc to close navbar
     closeMenuByEscapeKey(buttonMenu, list, navbar);
-
-    // nav loses focus
     closeMenuWhenLosingFocus(buttonMenu, list, navbar);
   } else {
-    // reset the values when navbar is closed
     resetMobileMenu(buttonMenu, list, navbar);
   }
 }
 
 function changeNodeListAttribute(list, attribute, value) {
   list.forEach((item) => item.setAttribute(attribute, value));
+}
+
+function closeSearchBox(searchbox, input, button, mobileButton, list) {
+  const buttonClose = document.querySelector("#button-close-search-js");
+  buttonClose.addEventListener(
+    "click",
+    resetMobileSearch(searchbox, input, button, mobileButton, list)
+  );
+}
+
+function closeSearchBoxOutsideDiv(searchbox, expandButton, closeButton, list) {
+  const img = document.querySelector("#icon-expand-search-js");
+  const input = document.querySelector("#search-input-mobile-js");
+  const isVisible = searchbox.getAttribute("data-visible");
+
+  if (isVisible === "true") {
+    window.addEventListener("click", (event) => {
+      if (
+        event.target === img ||
+        event.target === searchbox ||
+        event.target === input ||
+        event.target === expandButton
+      ) {
+        return null;
+      } else {
+        resetMobileSearch(searchbox, expandButton, closeButton, list);
+      }
+    });
+  }
 }
 
 function closeMenuByClickOutsideNav(button, list, nav) {
@@ -120,6 +161,25 @@ function closeMenuWhenLosingFocus(button, list, nav) {
   });
 }
 
+function closeSearchBoxWhenLosingFocus(
+  searchbox,
+  expandButton,
+  closeButton,
+  list
+) {
+  window.addEventListener("focusin", (event) => {
+    if (
+      event.target.id === "search-input-mobile-js" ||
+      event.target.id === "search-submit-button-mobile-js" ||
+      event.target.id === "button-close-search-js"
+    ) {
+      return null;
+    } else {
+      resetMobileSearch(searchbox, expandButton, closeButton, list);
+    }
+  });
+}
+
 function resetMobileMenu(button, list, nav) {
   button.setAttribute("aria-expanded", false);
   button.setAttribute("aria-label", "Open menu");
@@ -127,14 +187,13 @@ function resetMobileMenu(button, list, nav) {
   changeNodeListAttribute(list, "tabindex", "-1");
 }
 
+function resetMobileSearch(searchbox, expandButton, closeButton, list) {
+  searchbox.setAttribute("data-visible", false);
+  searchbox.setAttribute("aria-hidden", true);
+  expandButton.setAttribute("aria-expanded", false);
+  closeButton.setAttribute("aria-expanded", false);
+  changeNodeListAttribute(list, "tabindex", "-1");
+}
+
 // Glider.js
 new Glide(".glide", { type: "carousel", perView: 1 }).mount();
-
-/*
-new Glide(".glide", {
-        type: "carousel",
-        autoplay: 3500,
-        perView: 4,
-        gap: 20,
-      }).mount();
-*/

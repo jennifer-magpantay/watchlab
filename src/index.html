@@ -61,10 +61,29 @@
     </div>
 
     <!-- mobile search icon -->
-    <button type='type' class="button--icon button--search" id="button-search-js" aria-expanded="false" aria-controls="search-mobile">
+    <button type="button" class="button--icon button--search" id="button-expand-search-js" aria-expanded="false" aria-controls="search-mobile">
       <span class='visually-hidden'>Search</span>
-      <img class='button--icon-icon' src="assets/icon_search.svg" alt="Search button" />
+      <img class='button--icon-icon' id="icon-expand-search-js" src="assets/icon_search.svg" alt="Search button" />
     </button>
+
+    <!-- search box for mobile -->
+    <div class="search--box-mobile" id="search-box-mobile-js" data-visible="false" aria-hidden="true">
+      <form role='search' class="form-mobile">
+        <label for='search'>
+          <span class='visually-hidden'>Search</span>
+        </label>
+        <input type='text' class="search--input" id='search-input-mobile-js' placeholder="Search" tabindex="-1" />
+        <button type='submit' class="button--icon" id="search-submit-button-mobile-js" tabindex="-1">
+          <span class='visually-hidden'>Submit Search</span>
+          <img class='button--icon-icon' src="assets/icon_search_white.svg" alt="Search button" />
+        </button>
+      </form>
+      <!-- close button -->
+      <button type='button' class="button--icon button--close" id="button-close-search-js" aria-expanded="false" aria-controls="search-mobile" tabindex="-1">
+        <span class='visually-hidden'>Close search</span>
+        <img class='button--icon-icon' id="icon-close-search-js" src="assets/icon_close.svg" alt="Close search button" />
+      </button>
+    </div>
 
     <!-- mobile navigation button icon -->
     <button type='type' class="button--icon button--menu" id="button-menu-js" aria-label='Open mobile menu' aria-controls="mobile--navigation-js" aria-expanded="false">
@@ -96,20 +115,6 @@
       </ul>
     </nav>
   </header>
-
-  <!-- search box for mobile -->
-  <div class="search--box-mobile" id="search-box-mobile-js" data-visible="false" id="search-mobile" aria-hidden="true" tabindex="-1">
-    <form role='search'>
-      <label for='search'>
-        <span class='visually-hidden'>Search</span>
-      </label>
-      <input type='text' class="search--input" id='search-input-mobile-js' placeholder="Search" tabindex="-1" />
-      <button type='submit' class="button--icon" id="search-button-mobile-js" tabindex="-1">
-        <span class='visually-hidden'>Submit Search</span>
-        <img class='button--icon-icon' src="assets/icon_search_white.svg" alt="Search button" />
-      </button>
-    </form>
-  </div>
 
   <!-- nonscript -->
   <noscript>Your browser does not support JavaScript or it is turned off. This would affectd the use of the application</noscript>

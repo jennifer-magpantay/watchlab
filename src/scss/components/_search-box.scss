@@ -62,21 +62,26 @@ form {
 }
 
 .search--box-mobile {
+    @include display-flex(center, space-between);
     width: 100%;
     position: absolute;
     top: 06rem;
     left: 0;
     padding: 01rem 8.33%;
-    transform: translateY(-200%);
+    transform: translateY(-250%);
     transition: all 0.3s ease;
-    z-index: 1;
+    z-index: -1;
 
     &[data-visible="true"] {
         transform: translateY(0%);
     }
 
-     @include mobile {
+    @include mobile {
         display: none;
+    }
+
+    .form-mobile {
+        width: 100%;
     }
 
     .search--input {
